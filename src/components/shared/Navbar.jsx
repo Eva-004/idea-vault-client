@@ -1,6 +1,7 @@
 import Image from "next/image";
 import NavLink from "./NavLink";
 import { Button } from "@heroui/react";
+import Link from "next/link";
 
 
 const Navbar = () => {
@@ -34,8 +35,12 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-4">
-                   <button className="btn btn-outline text-cyan-800 border-cyan-800 ">Login</button>
-                   <button className="btn  bg-cyan-800 text-white">Register</button>
+                   <Link href='/login'>
+                    <button className="btn btn-outline text-cyan-800 border-cyan-800 ">Login</button>
+                   </Link>
+                  <Link href={'/register'}>
+                    <button className="btn  bg-cyan-800 text-white">Register</button>
+                  </Link>
                 </div>
             </div>
         </div>

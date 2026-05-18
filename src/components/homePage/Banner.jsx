@@ -61,7 +61,7 @@ const Banner = () => {
                                 </p>
 
                                 {slide.btnTitle && (
-                                    <button className="px-8 py-3 bg-blue-600 hover:bg-blue-700 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:scale-105">
+                                    <button className="px-8 py-3 bg-gradient-to-r from-purple-700 to-blue-600 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:scale-105">
                                         {slide.btnTitle}
                                     </button>
                                 )}
