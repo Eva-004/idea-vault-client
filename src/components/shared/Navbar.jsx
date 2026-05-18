@@ -25,7 +25,7 @@ const Navbar = () => {
                     </div>
                     <div className="flex gap-4 items-center">
                       <Image src={'/images/logo.webp'} alt="logo" width={40} height={40} className="object-cover"/>
-                      <h2 className="text-3xl font-bold bg-gradient-to-r from-blue-700 to-blue-500 bg-clip-text text-transparent">IdeaVault</h2>
+                      <h2 className="text-3xl font-bold bg-gradient-to-r from-cyan-800 to-cyan-600 bg-clip-text text-transparent">IdeaVault</h2>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -34,8 +34,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className="navbar-end gap-4">
-                   <button className="btn btn-outline btn-primary ">Login</button>
-                   <button className="btn  btn-primary text-white">Register</button>
+                   <button className="btn btn-outline text-cyan-800 border-cyan-800 ">Login</button>
+                   <button className="btn  bg-cyan-800 text-white">Register</button>
                 </div>
             </div>
         </div>
