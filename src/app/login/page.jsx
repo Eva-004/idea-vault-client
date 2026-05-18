@@ -44,11 +44,11 @@ const LoginPage = () => {
 
       };
 
-    //      const handleGoogleSignIn = async()=>{
-    //     const data = await authClient.signIn.social({
-    //      provider: "google",
-    //   });
-    //   }
+         const handleGoogleSignIn = async()=>{
+        const data = await authClient.signIn.social({
+         provider: "google",
+      });
+      }
 
     return (
         <div className="">
@@ -120,7 +120,7 @@ const LoginPage = () => {
                 </Form>
                 <p className="text-center text-gray-600 mt-2 text-xl">Don`t have account? Please <Link href={'/register'} className="text-blue-700">Register</Link></p>
                 <p className="text-center text-gray-600">OR</p>
-                <Button variant="outline" className={'w-full '}><GrGoogle /> Sign in with Google</Button>
+                <Button onClick={handleGoogleSignIn} variant="outline" className={'w-full '}><GrGoogle /> Sign in with Google</Button>
             </Card>
         </div>
     );

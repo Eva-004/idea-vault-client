@@ -38,12 +38,12 @@ const RegisterPage = () => {
         }
 
     }
-    //  const handleGoogleSignIn = async()=>{
-    //     const data = await authClient.signIn.social({
-    //      provider: "google",
-    //   });
+     const handleGoogleSignIn = async()=>{
+        const data = await authClient.signIn.social({
+         provider: "google",
+      });
        
-    //   }
+      }
     return (
         <Card className="shadow-md w-full max-w-md mx-auto py-5  my-8">
             <h1 className="text-center text-2xl font-bold">Register</h1>
@@ -120,7 +120,7 @@ const RegisterPage = () => {
             </Form>
              <p className="text-center text-gray-600 mt-2 text-xl">Have a account! Please <Link href={'/login'} className="text-blue-700">Login</Link></p>
                   <p className="text-center text-gray-600">OR</p>
-                  <Button  variant="outline" className={'w-full '}><FcGoogle/> Register with Google</Button>
+                  <Button onClick={handleGoogleSignIn} variant="outline" className={'w-full '}><FcGoogle/> Register with Google</Button>
         </Card>
     );
 };
