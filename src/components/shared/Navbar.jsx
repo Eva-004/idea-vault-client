@@ -1,7 +1,10 @@
+'use client'
 import Image from "next/image";
 import NavLink from "./NavLink";
-import { Button } from "@heroui/react";
 import Link from "next/link";
+import { authClient } from "@/lib/auth-client";
+import { toast } from "react-toastify";
+import ProfileDropdown from "./ProfileDropdown";
 
 
 const Navbar = () => {
@@ -10,6 +13,18 @@ const Navbar = () => {
       <li><NavLink href={'/ideas'}>Ideas</NavLink></li>
       <li><NavLink href={'/add-ideas'}>Add Idea</NavLink></li>
     </>
+     const loginRegister = <>
+        <li className='text-lg block  bg-gradient-to-r from-purple-700 to-blue-600 text-white '><Link href={'/login'} >Login</Link></li>
+        <li className='text-lg block  bg-gradient-to-r from-purple-700 to-blue-600 text-white '><Link href={'/register'} >Register</Link></li>
+        
+    </>
+     const userData = authClient.useSession();
+    const user = userData.data?.user;
+    console.log(user);
+    const handleLogOut = async () => {
+        await authClient.signOut();
+        toast.success('Logout successfully!')
+    }
     return (
         <div className="bg-base-200 shadow-sm ">
             <div className="navbar w-11/12 mx-auto">
@@ -20,13 +35,16 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex="-1"
-                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-1 mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
                             {links}
+                             {user &&
+                              <li className='text-lg block' onClick={handleLogOut}><Link className=" bg-gradient-to-r from-purple-700 to-blue-600 text-white "  href={'/login'} >Logout</Link></li>}
+                             {!user && loginRegister}
                         </ul>
                     </div>
                     <div className="flex gap-4 items-center">
                       <Image src={'/images/logo.webp'} alt="logo" width={40} height={40} className="object-cover"/>
-                      <h2 className="text-3xl font-bold bg-gradient-to-r from-cyan-800 to-cyan-600 bg-clip-text text-transparent">IdeaVault</h2>
+                      <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-700 to-blue-600  bg-clip-text text-transparent">IdeaVault</h2>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -34,14 +52,22 @@ const Navbar = () => {
                         {links}
                     </ul>
                 </div>
-                <div className="navbar-end gap-4">
-                   <Link href='/login'>
-                    <button className="btn btn-outline text-cyan-800 border-cyan-800 ">Login</button>
+               
+                 { !user && <div className="navbar-end hidden md:flex gap-4 ">
+                    <Link href='/login'>
+                    <button className="btn btn-outline bg-gradient-to-r from-purple-700 to-blue-600 text-white ">Login</button>
                    </Link>
-                  <Link href={'/register'}>
-                    <button className="btn  bg-cyan-800 text-white">Register</button>
+                    <Link href={'/register'}>
+                    <button className="btn bg-gradient-to-r from-purple-700 to-blue-600 text-white">Register</button>
                   </Link>
-                </div>
+                </div> }
+                { user && <div className="navbar-end flex items-center gap-4 ">
+                       <ProfileDropdown handleLogOut={handleLogOut} image={user?.image} name={user?.name} email={user?.email}></ProfileDropdown>
+                     
+                        {/* <NavLink  href={'/profile'}> <span className='text-lg'>Profile</span> </NavLink>
+                        
+                        <button onClick={handleLogOut} className='btn btn-primary btn-outline hidden md:flex'><Link href={'/login'}>LogOut</Link></button> */}
+                    </div>}
             </div>
         </div>
     );

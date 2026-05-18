@@ -32,7 +32,7 @@ const Banner = () => {
         }
     ]
     return (
-        <div className="relative overflow-hidden mt-4 h-[80vh] w-full bg-cover bg-no-repeat bg-center flex items-center  shadow-2xl">
+        <div className="relative overflow-hidden  h-[80vh] w-full bg-cover bg-no-repeat bg-center flex items-center  shadow-2xl">
             <Swiper navigation={true} pagination={true} modules={[Navigation, Pagination, Autoplay]} spaceBetween={30}
                 centeredSlides={true}
                 autoplay={{
