@@ -12,18 +12,18 @@ import {
     TextField,
 } from "@heroui/react";
 import Link from "next/link";
+import { useSearchParams } from "next/navigation";
 import { GrGoogle } from "react-icons/gr";
 import { toast } from "react-toastify";
 
 
 
 const LoginPage = () => {
-
-
+     const searchParams = useSearchParams();
+     const redirect = searchParams.get('redirect')||'/';
+       
        const onSubmit = async (e) => {
         e.preventDefault();
-        const name = e.target.name.value;
-        const image = e.target.image.value;
         const email = e.target.email.value;
         const password = e.target.password.value;
 
@@ -31,7 +31,7 @@ const LoginPage = () => {
         email: email, // required
         password: password, // required
          rememberMe: true,
-        callbackURL: "/",
+        callbackURL: redirect,
        });
 
        if(error){
@@ -55,7 +55,7 @@ const LoginPage = () => {
             <Card className="shadow-md w-full max-w-md mx-auto  py-5 my-8">
                 <h1 className="text-center text-2xl font-bold">Login</h1>
 
-                <Form className="flex w-full   mx-auto flex-col gap-4" >
+                <Form className="flex w-full   mx-auto flex-col gap-4" onSubmit={onSubmit}>
                     <TextField
                         isRequired
                         name="email"

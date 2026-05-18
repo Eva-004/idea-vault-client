@@ -25,6 +25,7 @@ const RegisterPage = () => {
             password, 
             image
         });
+        console.log({data,error});
         if (error) {
             toast.error(error)
         }
