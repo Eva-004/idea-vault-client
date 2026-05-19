@@ -11,7 +11,7 @@ const Navbar = () => {
     const links = <>
       <li><NavLink href={'/'}>Home</NavLink></li>
       <li><NavLink href={'/ideas'}>Ideas</NavLink></li>
-      <li><NavLink href={'/add-ideas'}>Add Idea</NavLink></li>
+      <li><NavLink href={'/add-idea'}>Add Idea</NavLink></li>
     </>
      const loginRegister = <>
         <li className='text-lg block  bg-gradient-to-r from-purple-700 to-blue-600 text-white '><Link href={'/login'} >Login</Link></li>
@@ -44,7 +44,7 @@ const Navbar = () => {
                     </div>
                     <div className="flex gap-4 items-center">
                       <Image src={'/images/logo.webp'} alt="logo" width={40} height={40} className="object-cover"/>
-                      <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-700 to-blue-600  bg-clip-text text-transparent">IdeaVault</h2>
+                      <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-700 to-blue-500  bg-clip-text text-transparent">IdeaVault</h2>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
