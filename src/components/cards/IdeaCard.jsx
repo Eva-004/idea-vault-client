@@ -1,5 +1,4 @@
 
-
 import {
     Card,
     CardAction,
@@ -11,7 +10,7 @@ import {
 import Image from "next/image";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
-import { BsFillArrowUpRightSquareFill } from "react-icons/bs";
+import { BsArrowUpRightSquare } from "react-icons/bs";
 
 
 const IdeaCard = ({idea}) => {
@@ -36,7 +35,7 @@ const IdeaCard = ({idea}) => {
                     </CardDescription>
                 </CardHeader>
                 <CardFooter>
-                    <Button variant="outline" className="w-full border border-blue-600 text-blue-700">View Details <BsFillArrowUpRightSquareFill /></Button>
+                    <Button variant="outline" className="w-full border  text-blue-700">View Details <BsArrowUpRightSquare /></Button>
                 </CardFooter>
             </Card>
         </div>
