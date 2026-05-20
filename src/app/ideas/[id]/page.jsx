@@ -1,13 +1,16 @@
-import { Card, FieldError, Form, Label, TextArea, TextField } from '@heroui/react';
+
+import CommentField from '@/components/CommentField';
+import { Card} from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';
-import { BiPlusCircle } from 'react-icons/bi';
+
 
 const IdeaDetailsPage = async ({ params }) => {
   const { id } = await params;
   const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/all-ideas/${id}`);
   const idea = await res.json();
   console.log(idea);
+  
   return (
     <div className='my-10'>
       <h2 className='font-bold text-2xl md:text-3xl text-center mb-8'>Dive Deep Into the Concept Behind This Innovation</h2>
@@ -55,16 +58,7 @@ const IdeaDetailsPage = async ({ params }) => {
           </div>
         </Card>
         <div className='mt-4'>
-            <Form>
-              <TextField  name="comment" className='max-w-xl border'>
-                                      <Label className='text-lg font-semibold flex items-center gap-1'><BiPlusCircle></BiPlusCircle> Add Your Valuable Opinion</Label>
-                                      <TextArea 
-                                          rows={2}
-                                          placeholder="Write your feedback..."
-                                      />
-                                      <FieldError />
-                                  </TextField>
-            </Form>
+           <CommentField></CommentField>
         </div>
       </div>
     </div>
