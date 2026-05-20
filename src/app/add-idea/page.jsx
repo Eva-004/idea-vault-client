@@ -139,7 +139,7 @@ const AddIdeaPage = () => {
                         <FieldError />
                     </TextField>
 
-                    <TextField name="estimateBudget">
+                    <TextField name="estimatedBudget">
                         <Label>Estimated Budget (optional)</Label>
                         <Input placeholder=" $5000 / ৳50,000" />
                         <FieldError />

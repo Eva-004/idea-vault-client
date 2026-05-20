@@ -11,6 +11,7 @@ import Image from "next/image";
 import { Button } from "../ui/button";
 import { Badge } from "../ui/badge";
 import { BsArrowUpRightSquare } from "react-icons/bs";
+import Link from "next/link";
 
 
 const IdeaCard = ({idea}) => {
@@ -20,7 +21,7 @@ const IdeaCard = ({idea}) => {
                 <div className="absolute inset-0 z-30 aspect-video " />
                 <Image
                     src={idea.image}
-                    alt="Event cover"
+                    alt={idea.title || 'idea title'}
                     width={200}
                     height={200}
                     className="relative z-20 aspect-video w-full object-cover  "
@@ -29,13 +30,13 @@ const IdeaCard = ({idea}) => {
                     <CardAction>
                         <Badge className={'text-lg text-pink-700'} variant="secondary">{idea.category}</Badge>
                     </CardAction>
-                    <CardTitle className={'font-semibold text-2xl '}>{idea.ideaTitle}</CardTitle>
+                    <CardTitle className={'font-semibold text-2xl '}>{idea.title}</CardTitle>
                     <CardDescription className={'line-clamp-1'}>
                         {idea.shortDescription}
                     </CardDescription>
                 </CardHeader>
                 <CardFooter>
-                    <Button variant="outline" className="w-full border  text-blue-700">View Details <BsArrowUpRightSquare /></Button>
+                    <Button variant="outline" className="w-full border  text-blue-700"><Link href={`http://localhost:3000/ideas/${idea._id}`} className="flex gap-2">View Details <BsArrowUpRightSquare /></Link></Button>
                 </CardFooter>
             </Card>
         </div>
