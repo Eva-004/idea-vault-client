@@ -1,5 +1,6 @@
 
 import CommentField from '@/components/CommentField';
+import ShowComments from '@/components/ShowComments';
 import { Card} from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';
@@ -58,7 +59,10 @@ const IdeaDetailsPage = async ({ params }) => {
           </div>
         </Card>
         <div className='mt-4'>
-           <CommentField></CommentField>
+           <CommentField idea={idea}></CommentField>
+        </div>
+        <div className='mt-4'>
+          <ShowComments idea={idea}></ShowComments>
         </div>
       </div>
     </div>

@@ -54,7 +54,8 @@ const AddIdeaPage = () => {
 
         if (res.ok) {
               toast.success("Added idea successfully!")
-           setIdeaCategory("")
+           setIdeaCategory("");
+           
         }
         else {
              toast.error("Failed to add idea!")

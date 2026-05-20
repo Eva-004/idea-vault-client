@@ -5,31 +5,27 @@ import React from 'react';
 import { BiPlusCircle } from 'react-icons/bi';
 import { toast } from 'react-toastify';
 
-const CommentField = () => {
+const CommentField = ({ idea }) => {
     const userData = authClient.useSession();
     const user = userData.data?.user;
     console.log(user)
-
     const onSubmit = async (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
         const commentData = Object.fromEntries(formData.entries());
         console.log(commentData);
-         if (!commentData.comment || commentData.comment.trim() === "") {
-        toast.error("Please write a comment first!");
-        return;
-    }
+        if (!commentData.comment || commentData.comment.trim() === "") {
+            toast.error("Please write a comment first!");
+            return;
+        }
         commentData.userEmail = user?.email;
         commentData.userName = user?.name;
+        commentData.ideaId = idea._id;
 
-        const currentTime= new Date().toLocaleDateString("en-GB", {
-            day: "numeric",
-            month: "long",
-            year: "numeric",
-        });
+        const currentTime = new Date().toLocaleDateString("en-GB");
 
-        commentData.timeStamp=currentTime;
+        commentData.timeStamp = currentTime;
 
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/comments`, {
             method: 'POST',
@@ -42,6 +38,7 @@ const CommentField = () => {
         console.log(comment);
         if (res.ok) {
             toast.success("Added comment successfully!")
+
         }
         else {
             toast.error("Failed to add comment!")
