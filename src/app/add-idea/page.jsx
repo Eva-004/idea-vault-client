@@ -1,4 +1,5 @@
 'use client'
+import { authClient } from '@/lib/auth-client';
 import {
     Button,
     Card,
@@ -10,8 +11,11 @@ import {
     TextField
 } from '@heroui/react';
 import { useState } from 'react';
+import { toast } from 'react-toastify';
 
 const AddIdeaPage = () => {
+    const userData = authClient.useSession();
+    const user = userData.data?.user;
     const [ideaCategory, setIdeaCategory] = useState("");
 
     const ideaCategories = [
@@ -31,6 +35,34 @@ const AddIdeaPage = () => {
         { key: "iot", label: "IoT & Smart Devices" },
         { key: "others", label: "Others" }
     ];
+
+    const onSubmit = async (e) => {
+        e.preventDefault();
+        
+        const formData = new FormData(e.currentTarget);
+        const idea = Object.fromEntries(formData.entries());
+        console.log(idea);
+        idea.tags = idea.tags ? idea.tags.split(',').map(tag=> tag.trim()) :[];
+          idea.userEmail = user?.email;
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/all-ideas`, {
+            method: 'POST',
+            headers: {
+                 'content-type': 'application/json',
+            },
+            body: JSON.stringify(idea)
+        });
+
+        if (res.ok) {
+              toast.success("Added idea successfully!")
+           setIdeaCategory("")
+        }
+        else {
+             toast.error("Failed to add idea!")
+        }
+      
+
+    };
+
     return (
         <div className='py-8 bg-[#F0F7FF]'>
 
@@ -44,7 +76,7 @@ const AddIdeaPage = () => {
                     Support people in need through IdeaVault
                 </p>
 
-                <Form className="flex flex-col gap-4" >
+                <Form className="flex flex-col gap-4" onSubmit={onSubmit}>
 
 
                     <TextField isRequired name="title">
@@ -107,7 +139,7 @@ const AddIdeaPage = () => {
                         <FieldError />
                     </TextField>
 
-                     <TextField  name="estimateBudget">
+                    <TextField name="estimateBudget">
                         <Label>Estimated Budget (optional)</Label>
                         <Input placeholder=" $5000 / ৳50,000" />
                         <FieldError />
@@ -119,7 +151,7 @@ const AddIdeaPage = () => {
                         <FieldError />
                     </TextField>
 
-                     <TextField isRequired name="problemStatement">
+                    <TextField isRequired name="problemStatement">
                         <Label>Problem Statement</Label>
                         <TextArea
                             rows={3}
@@ -128,7 +160,7 @@ const AddIdeaPage = () => {
                         <FieldError />
                     </TextField>
 
-                     <TextField isRequired name="proposedSolution">
+                    <TextField isRequired name="proposedSolution">
                         <Label>Proposed Solution</Label>
                         <TextArea
                             rows={3}
@@ -146,7 +178,7 @@ const AddIdeaPage = () => {
                         <Button
                             type="reset"
                             variant="secondary"
-                            className="w-full"
+                            className="w-full text-neutral bg-info"
                             onPress={() => setIdeaCategory("")}
                         >
                             Reset
