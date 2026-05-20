@@ -1,5 +1,6 @@
 
 import IdeaCard from '@/components/cards/IdeaCard';
+import FilteredIdeas from '@/components/FilteredIdeas';
 import SearchBar from '@/components/SearchBar';
 
 import React from 'react';
@@ -7,7 +8,8 @@ import React from 'react';
 const IdeasPage = async ({searchParams}) => {
     const params = await searchParams;
     const search = params?.search || ""
-    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/all-ideas?search=${search}`,{
+    const category = params?.category || ""
+    const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/all-ideas?search=${search}&category=${category}`,{
         cache: "no-store"
     });
     const data = await res.json();
@@ -18,11 +20,11 @@ const IdeasPage = async ({searchParams}) => {
                 <h2 className='text-4xl font-bold '>Explore All Ideas</h2>
                 <p className='text-gray-700'>Discover creative ideas shared by innovators.</p>
             </div>
-            <div >
+            <div className='flex justify-between items-center mt-4'>
                 <SearchBar ></SearchBar>
-                <div>
-                    
-                </div>
+             
+                    <FilteredIdeas></FilteredIdeas>
+               
             </div>
             <div className='mt-10 grid grid-cols-1 md:grid-cols-3 gap-6'>
                 {

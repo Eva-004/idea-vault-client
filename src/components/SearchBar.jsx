@@ -10,7 +10,7 @@ const SearchBar = () => {
 
     }
     return (
-        <div className='flex gap-4 items-baseline-last mt-4'>
+        <div className='flex gap-4 items-baseline-last '>
             <SearchField name="search" onClear={()=> setSearch('')} >
                         <Label className='font-bold text-xl'>Search Idea</Label>
                         <SearchField.Group >
