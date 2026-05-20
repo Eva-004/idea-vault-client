@@ -13,6 +13,11 @@ const Navbar = () => {
       <li><NavLink href={'/ideas'}>Ideas</NavLink></li>
       <li><NavLink href={'/add-idea'}>Add Idea</NavLink></li>
     </>
+
+    const userSpecificRoute = <>
+      <li><NavLink href={'/my-ideas'}>My Ideas</NavLink></li>
+      <li><NavLink href={'/my-interactions'}>My Interactions</NavLink></li>
+    </>
      const loginRegister = <>
         <li className='text-lg block  bg-gradient-to-r from-purple-700 to-blue-600 text-white '><Link href={'/login'} >Login</Link></li>
         <li className='text-lg block  bg-gradient-to-r from-purple-700 to-blue-600 text-white '><Link href={'/register'} >Register</Link></li>
@@ -50,6 +55,7 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {links}
+                        {userSpecificRoute}
                     </ul>
                 </div>
                

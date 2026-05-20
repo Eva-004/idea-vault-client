@@ -23,7 +23,7 @@ const CommentField = ({ idea }) => {
         commentData.userName = user?.name;
         commentData.ideaId = idea._id;
 
-        const currentTime = new Date().toLocaleDateString("en-GB");
+        const currentTime =new Date().toLocaleString("en-GB");
 
         commentData.timeStamp = currentTime;
 
