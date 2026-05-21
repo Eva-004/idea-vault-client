@@ -17,7 +17,7 @@ import Link from "next/link";
 const IdeaCard = ({idea}) => {
     return (
         <div>
-            <Card className="relative mx-auto w-full max-w-sm pt-0 border border-purple-500">
+            <Card className="relative mx-auto w-full max-w-sm pt-0 border border-purple-500 hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl">
                 <div className="absolute inset-0 z-30 aspect-video " />
                 <Image
                     src={idea.image}

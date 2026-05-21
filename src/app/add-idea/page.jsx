@@ -44,10 +44,12 @@ const AddIdeaPage = () => {
         console.log(idea);
         idea.tags = idea.tags ? idea.tags.split(',').map(tag=> tag.trim()) :[];
           idea.userEmail = user?.email;
+          const {data:tokenData} = await authClient.token();
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/all-ideas`, {
             method: 'POST',
             headers: {
                  'content-type': 'application/json',
+                 authorization: `Bearer ${tokenData?.token}`
             },
             body: JSON.stringify(idea)
         });

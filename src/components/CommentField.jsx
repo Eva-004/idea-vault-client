@@ -26,11 +26,13 @@ const CommentField = ({ idea }) => {
         const currentTime =new Date().toLocaleString("en-GB");
 
         commentData.timeStamp = currentTime;
+         const {data:tokenData} = await authClient.token();
 
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/comments`, {
             method: 'POST',
             headers: {
                 'content-type': 'application/json',
+                 authorization: `Bearer ${tokenData?.token}`
             },
             body: JSON.stringify(commentData)
         });

@@ -1,14 +1,24 @@
 
 import CommentField from '@/components/CommentField';
 import ShowComments from '@/components/ShowComments';
+import { auth } from '@/lib/auth';
 import { Card} from '@heroui/react';
+import { headers } from 'next/headers';
 import Image from 'next/image';
 import React from 'react';
 
 
 const IdeaDetailsPage = async ({ params }) => {
   const { id } = await params;
-  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/all-ideas/${id}`);
+   const {token} = await auth.api.getToken({
+        headers: await headers()
+    })
+    console.log(token);
+  const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/all-ideas/${id}`,{
+          headers: {
+           authorization: `Bearer ${token}`
+        }
+  });
   const idea = await res.json();
   console.log(idea);
   

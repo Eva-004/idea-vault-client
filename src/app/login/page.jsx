@@ -13,7 +13,8 @@ import {
 } from "@heroui/react";
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
-import { GrGoogle } from "react-icons/gr";
+import { FcGoogle } from "react-icons/fc";
+
 import { toast } from "react-toastify";
 
 
@@ -43,7 +44,7 @@ const LoginPage = () => {
         console.log(email,password)
 
       };
-
+        
          const handleGoogleSignIn = async()=>{
         const data = await authClient.signIn.social({
          provider: "google",
@@ -69,7 +70,7 @@ const LoginPage = () => {
                         }}
                     >
                         <Label>Email</Label>
-                        <Input placeholder="john@example.com" />
+                        <Input className='placeholder:text-gray-500' placeholder="john@example.com" />
                         <FieldError />
                     </TextField>
 
@@ -96,7 +97,7 @@ const LoginPage = () => {
                         }}
                     >
                         <Label>Password</Label>
-                        <Input placeholder="Enter your password" />
+                        <Input className='placeholder:text-gray-500'  placeholder="Enter your password" />
                         <Description>
                             Must be at least 8 characters with 1 uppercase, 1 lowercase and 1 number
                         </Description>
@@ -108,11 +109,11 @@ const LoginPage = () => {
                             <Check />
                             Login
                         </Button>
-                        <Button type="reset" variant="secondary">
+                        <Button type="reset" className='text-blue-700'>
                             Reset
                         </Button>
                         <Link href={'/forget-password'}>
-                        <Button type="button" variant="secondary">
+                        <Button type="button" className='text-blue-700'>
                             Forget password
                         </Button>
                         </Link>
@@ -120,7 +121,7 @@ const LoginPage = () => {
                 </Form>
                 <p className="text-center text-gray-600 mt-2 text-xl">Don`t have account? Please <Link href={'/register'} className="text-blue-700">Register</Link></p>
                 <p className="text-center text-gray-600">OR</p>
-                <Button onClick={handleGoogleSignIn} variant="outline" className={'w-full '}><GrGoogle /> Sign in with Google</Button>
+                <Button onClick={handleGoogleSignIn} variant="outline" className={'w-full '}><FcGoogle/> Sign in with Google</Button>
             </Card>
         </div>
     );

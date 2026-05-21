@@ -1,21 +1,26 @@
 "use client";
+import { authClient } from "@/lib/auth-client";
 import { TrashBin } from "@gravity-ui/icons";
 import { AlertDialog, Button } from "@heroui/react";
 import { toast } from "react-toastify";
 
-const DeleteIdea = ({ id , idea}) => {
-     const handleDelete = async()=>{
-        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/all-ideas/${id}`,{
+const DeleteIdea = ({ id, idea }) => {
+    
+    const handleDelete = async () => {
+        const { data: tokenData } = await authClient.token();
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/all-ideas/${id}`, {
             method: 'DELETE',
-           
+            headers: {
+                authorization: `Bearer ${tokenData?.token}`
+            }
         });
 
-   
-        if(res.ok){
-          const data = await res.json();
-          toast.warn(`Deleted ${idea.title} permanently!`)
-           console.log(data)
-        }else{
+
+        if (res.ok) {
+            const data = await res.json();
+            toast.warn(`Deleted ${idea.title} permanently!`)
+            console.log(data)
+        } else {
             toast.error('Failed to delete idea!')
         }
     }

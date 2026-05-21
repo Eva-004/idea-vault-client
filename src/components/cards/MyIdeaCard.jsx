@@ -9,7 +9,7 @@ import DeleteIdea from '../DeleteIdea';
 const MyIdeaCard = ({idea}) => {
     return (
         <div className=''>
-            <Card className='flex md:flex-row justify-between gap-4 md:items-start items-center shadow-xl'>
+            <Card className='flex md:flex-row justify-between gap-4 md:items-start items-center shadow-xl hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl'>
                 <div className='relative w-full lg:w-1/2 h-[40vh]'>
                     <Image src={idea?.image} alt={idea?.title || 'idea title'} fill className='object-cover rounded-2xl'/>
                 </div>

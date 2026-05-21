@@ -21,14 +21,14 @@ const Banner = () => {
             image: "/images/banner2.webp",
             description: "Discover trending startup ideas, connect with creative thinkers, and collaborate to shape concepts into possibilities.",
             btnTitle: "Explore Ideas",
-            btnLink: "#ideas"
+            btnLink: "/ideas"
         },
         {
             title: "Turn Ideas Into Impact",
             image: "/images/banner3.avif",
             description: "Share innovative startup concepts, gather valuable community feedback, and refine ideas through meaningful discussions.",
             btnTitle: "Get Started",
-            btnLink: ""
+            btnLink: "/add-idea"
         }
     ]
     return (

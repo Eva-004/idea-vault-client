@@ -57,7 +57,7 @@ const RegisterPage = () => {
 
                 <TextField isRequired name="image" type="text">
                     <Label>Image URL</Label>
-                    <Input placeholder="Image URL" />
+                    <Input className='placeholder:text-gray-500'  placeholder="Image URL" />
                     <FieldError />
                 </TextField>
 
@@ -74,7 +74,7 @@ const RegisterPage = () => {
                     }}
                 >
                     <Label>Email</Label>
-                    <Input placeholder="john@example.com" />
+                    <Input className='placeholder:text-gray-500'  placeholder="john@example.com" />
                     <FieldError />
                 </TextField>
 
@@ -101,7 +101,7 @@ const RegisterPage = () => {
                     }}
                 >
                     <Label>Password</Label>
-                    <Input placeholder="Enter your password" />
+                    <Input className='placeholder:text-gray-500'  placeholder="Enter your password" />
                     <Description>
                         Must be at least 6 characters with 1 uppercase, 1 lowercase and 1 number
                     </Description>

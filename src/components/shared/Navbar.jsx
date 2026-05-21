@@ -7,6 +7,7 @@ import { toast } from "react-toastify";
 import ProfileDropdown from "./ProfileDropdown";
 import { Moon, Sun } from "@gravity-ui/icons";
 import ThemeToggle from "../ThemeToggle";
+import { redirect } from "next/navigation";
 
 
 const Navbar = () => {
@@ -21,8 +22,8 @@ const Navbar = () => {
         <li><NavLink href={'/my-interactions'}>My Interactions</NavLink></li>
     </>
     const loginRegister = <>
-        <li className='text-lg block  bg-gradient-to-r from-purple-700 to-blue-600 text-white '><Link href={'/login'} >Login</Link></li>
-        <li className='text-lg block  bg-gradient-to-r from-purple-700 to-blue-600 text-white '><Link href={'/register'} >Register</Link></li>
+        <li className='text-lg block  bg-gradient-to-r from-purple-700 to-blue-600 text-white transition-all duration-300 shadow-lg hover:scale-105'><Link href={'/login'} >Login</Link></li>
+        <li className='text-lg block  bg-gradient-to-r from-purple-700 to-blue-600 text-white transition-all duration-300 shadow-lg hover:scale-105'><Link href={'/register'} >Register</Link></li>
 
     </>
     const icons = {
@@ -38,6 +39,7 @@ const Navbar = () => {
     const handleLogOut = async () => {
         await authClient.signOut();
         toast.success('Logout successfully!')
+        redirect('/');
     }
     return (
         <div className="bg-white dark:bg-gray-900 shadow-sm">
@@ -52,8 +54,11 @@ const Navbar = () => {
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
                             {links}
                             {user &&
-                                <li className='text-lg block' onClick={handleLogOut}><Link className=" bg-gradient-to-r from-purple-800 to-blue-800 text-white " href={'/login'} >Logout</Link></li>}
+                                <li className='text-lg block' onClick={handleLogOut}><Link className=" bg-gradient-to-r from-purple-800 to-blue-800 text-white transition-all duration-300 shadow-lg hover:scale-105" href={'/login'} >Logout</Link></li>}
+                            {user && userSpecificRoute}
+                            
                             {!user && loginRegister}
+                            
                         </ul>
                     </div>
                     <div className="flex gap-4 items-center">
@@ -64,17 +69,17 @@ const Navbar = () => {
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
                         {links}
-                        {userSpecificRoute}
+                        {user && userSpecificRoute}
                     </ul>
                 </div>
 
                 {!user && <div className="navbar-end hidden md:flex gap-4 ">
                     <ThemeToggle value={icons.darkMode}></ThemeToggle>
                     <Link href='/login'>
-                        <button className="btn btn-outline bg-gradient-to-r from-purple-800 to-blue-800 text-white ">Login</button>
+                        <button className="btn btn-outline border-purple-900 text-purple-900  dark:text-white transition-all duration-300 shadow-lg hover:scale-105">Login</button>
                     </Link>
                     <Link href={'/register'}>
-                        <button className="btn bg-gradient-to-r from-purple-800 to-blue-800 text-white">Register</button>
+                        <button className="btn bg-gradient-to-r from-purple-800 to-blue-800 text-white transition-all duration-300 shadow-lg hover:scale-105">Register</button>
                     </Link>
                 </div>}
                 {user && <div className="navbar-end flex items-center gap-4 ">

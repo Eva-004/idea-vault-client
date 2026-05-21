@@ -10,7 +10,7 @@ import DeleteComment from '../DeleteComment';
 const MyInteractionCard = ({ idea, comment }) => {
     return (
         <div className='max-w-5xl'>
-            <Card className='flex md:flex-row  gap-8 md:items-start items-center shadow-xl'>
+            <Card className='flex md:flex-row  gap-8 md:items-start items-center shadow-xl hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl'>
                 <div className='relative w-full md:w-[220px] h-[220px] shrink-0'>
                     <Image src={idea?.image} alt={idea?.title || 'idea title'} fill className='absolute object-cover rounded-2xl' />
                     <p className='absolute top-5 right-5 badge p-2 badge-primary'>{idea?.category}</p>
