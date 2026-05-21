@@ -26,7 +26,7 @@ const ProfileDropdown = ({handleLogOut,image,name,email}) => {
             </Avatar>
             <div className="flex flex-col gap-0">
               <p className="text-sm leading-5 font-medium">{name}</p>
-              <p className="text-xs leading-none text-muted">{email}</p>
+              <p className="text-xs leading-none text-gray-500">{email}</p>
             </div>
           </div>
         </div>
