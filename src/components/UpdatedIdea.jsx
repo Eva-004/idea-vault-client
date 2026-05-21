@@ -38,7 +38,7 @@ const UpdatedIdea = ({ id , idea}) => {
         console.log(idea);
         idea.tags = idea.tags ? idea.tags.split(',').map(tag => tag.trim()) : [];
         idea.userEmail = user?.email;
-        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/ideas/${id}`, {
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/all-ideas/${id}`, {
             method: 'PATCH',
             headers: {
                 'content-type': 'application/json',

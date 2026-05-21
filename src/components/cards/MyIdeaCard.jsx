@@ -4,6 +4,7 @@ import Image from 'next/image';
 import React from 'react';
 import { BiEdit } from 'react-icons/bi';
 import UpdatedIdea from '../UpdatedIdea';
+import DeleteIdea from '../DeleteIdea';
 
 const MyIdeaCard = ({idea}) => {
     return (
@@ -21,7 +22,7 @@ const MyIdeaCard = ({idea}) => {
                 </div>
                 <div className='flex justify-between gap-4 items-center'>
                             <UpdatedIdea id={idea._id} idea={idea}></UpdatedIdea>
-                            <Button className='border border-red-500 text-red-500 rounded-none'><TrashBin></TrashBin>Delete</Button>
+                            <DeleteIdea id={idea._id} idea={idea}></DeleteIdea>
                         </div>
             </Card>
         </div>
