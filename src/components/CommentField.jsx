@@ -47,9 +47,9 @@ const CommentField = ({ idea }) => {
     return (
         <div>
             <Form onSubmit={onSubmit}>
-                <TextField name="comment" className='max-w-xl '>
+                <TextField  className='max-w-xl '>
                     <Label className='text-lg font-semibold flex items-center gap-1'><BiPlusCircle></BiPlusCircle> Add Your Valuable Opinion</Label>
-                    <TextArea className='border shadow-md  placeholder:text-gray-500'
+                    <TextArea name="comment" className='border shadow-md  placeholder:text-gray-500'
                         rows={2}
                         placeholder="Write your feedback..."
                     />

@@ -7,11 +7,7 @@ const DeleteIdea = ({ id , idea}) => {
      const handleDelete = async()=>{
         const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/all-ideas/${id}`,{
             method: 'DELETE',
-            headers:{
-                'content-type': 'application/json',
-                
-            },
-            body: JSON.stringify(idea)
+           
         });
 
    

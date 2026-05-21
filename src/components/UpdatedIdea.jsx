@@ -70,7 +70,7 @@ const UpdatedIdea = ({ id , idea}) => {
                                 <Modal.Icon className="bg-accent-soft text-accent-soft-foreground">
                                     <BiEdit className="text-purple-800"></BiEdit>
                                 </Modal.Icon>
-                                <Modal.Heading>Contact Us</Modal.Heading>
+                                <Modal.Heading>Update</Modal.Heading>
                                 <p className="mt-1.5 text-sm leading-5 text-gray-500 ">
                                     Update you idea
                                 </p>
