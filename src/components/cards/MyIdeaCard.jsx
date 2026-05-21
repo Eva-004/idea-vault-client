@@ -3,6 +3,7 @@ import { Button, Card } from '@heroui/react';
 import Image from 'next/image';
 import React from 'react';
 import { BiEdit } from 'react-icons/bi';
+import UpdatedIdea from '../UpdatedIdea';
 
 const MyIdeaCard = ({idea}) => {
     return (
@@ -19,8 +20,8 @@ const MyIdeaCard = ({idea}) => {
                     </div>
                 </div>
                 <div className='flex justify-between gap-4 items-center'>
+                            <UpdatedIdea id={idea._id} idea={idea}></UpdatedIdea>
                             <Button className='border border-red-500 text-red-500 rounded-none'><TrashBin></TrashBin>Delete</Button>
-                            <Button className='border border-blue-700 text-blue-700 rounded-none'><BiEdit></BiEdit> Edit</Button>
                         </div>
             </Card>
         </div>
