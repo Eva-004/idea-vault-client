@@ -2,8 +2,7 @@
 @import "@heroui/styles";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
-
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark (&:where(.dark, .dark *));
 @plugin "daisyui";
 
 .swiper {

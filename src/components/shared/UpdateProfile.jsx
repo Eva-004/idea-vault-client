@@ -15,7 +15,7 @@ export function UpdateProfile() {
   }
   return (
     <Modal>
-      <Button variant="secondary"><BiEdit/> Update Profile</Button>
+      <Button className='text-purple-800 dark:text-blue-600'><BiEdit/> Update Profile</Button>
       <Modal.Backdrop>
         <Modal.Container placement="auto">
           <Modal.Dialog className="sm:max-w-md">
@@ -39,7 +39,7 @@ export function UpdateProfile() {
                     <Input placeholder="Enter your image url" />
                   </TextField>
                   <Modal.Footer>
-              <Button slot="close" variant="secondary">
+              <Button slot="close" className='text-gray-500'>
                 Cancel
               </Button>
                 <Button  type="submit" >Update</Button>

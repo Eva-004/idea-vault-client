@@ -65,7 +65,7 @@ const AddIdeaPage = () => {
     };
 
     return (
-        <div className='py-8 bg-[#F0F7FF]'>
+        <div className='py-8 bg-[#F0F7FF]  dark:bg-gray-900'>
 
             <Card className="shadow-md md:mx-auto md:max-w-2xl py-6 px-6 rounded-2xl">
 
@@ -82,14 +82,14 @@ const AddIdeaPage = () => {
 
                     <TextField isRequired name="title">
                         <Label>Idea Title</Label>
-                        <Input placeholder="Enter your idea title" />
+                        <Input className='placeholder:text-gray-500' placeholder="Enter your idea title" />
                         <FieldError />
                     </TextField>
 
 
                     <TextField isRequired name="shortDescription">
                         <Label>Short Description</Label>
-                        <TextArea
+                        <TextArea className='placeholder:text-gray-500'
                             rows={2}
                             placeholder="Write a short description..."
                         />
@@ -99,7 +99,7 @@ const AddIdeaPage = () => {
 
                     <TextField isRequired name="detailDescription">
                         <Label>Detailed Description</Label>
-                        <TextArea
+                        <TextArea className='placeholder:text-gray-500'
                             rows={4}
                             placeholder="Write detailed description..."
                         />
@@ -129,32 +129,32 @@ const AddIdeaPage = () => {
 
                     <TextField name="tags">
                         <Label>Tags (optional)</Label>
-                        <Input placeholder="AI,EdTech,Marketplace...." />
+                        <Input className='placeholder:text-gray-500' placeholder="AI,EdTech,Marketplace...." />
                         <FieldError />
                     </TextField>
 
 
                     <TextField isRequired name="image" type="text">
                         <Label>Image URL</Label>
-                        <Input placeholder="Image URL" />
+                        <Input className='placeholder:text-gray-500' placeholder="Image URL" />
                         <FieldError />
                     </TextField>
 
                     <TextField name="estimatedBudget">
                         <Label>Estimated Budget (optional)</Label>
-                        <Input placeholder=" $5000 / ৳50,000" />
+                        <Input className='placeholder:text-gray-500' placeholder=" $5000 / ৳50,000" />
                         <FieldError />
                     </TextField>
 
                     <TextField isRequired name="targetAudience">
                         <Label>Target Audience</Label>
-                        <Input placeholder="Enter your targeted audience" />
+                        <Input className='placeholder:text-gray-500' placeholder="Enter your targeted audience" />
                         <FieldError />
                     </TextField>
 
                     <TextField isRequired name="problemStatement">
                         <Label>Problem Statement</Label>
-                        <TextArea
+                        <TextArea className='placeholder:text-gray-500'
                             rows={3}
                             placeholder="Describe the problem or pain point users are facing..."
                         />
@@ -163,7 +163,7 @@ const AddIdeaPage = () => {
 
                     <TextField isRequired name="proposedSolution">
                         <Label>Proposed Solution</Label>
-                        <TextArea
+                        <TextArea className='placeholder:text-gray-500'
                             rows={3}
                             placeholder="How does your idea solve this problem?"
                         />
