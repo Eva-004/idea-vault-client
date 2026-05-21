@@ -6,7 +6,7 @@ const IdeaStats = () => {
     return (
         <div className='max-w-6xl mx-auto px-4 py-20'>
             <div className='text-center max-w-2xl mx-auto space-y-4'>
-                <h2 className='text-4xl font-bold bg-gradient-to-r from-purple-700 to-blue-700 bg-clip-text text-transparent'>
+                <h2 className='text-4xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent'>
                     Empowering Future Innovators
                 </h2>
                 <p className='text-gray-600 dark:text-gray-300'>
@@ -14,10 +14,10 @@ const IdeaStats = () => {
                 </p>
             </div>
 
-            <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-14'>
+            <div className='grid grid-cols-1 md:grid-cols-3 gap-6 mt-14 text-center md:text-left'>
 
                 <div className='group p-7 rounded-3xl border bg-white dark:bg-[#111827] hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl'>
-                    <div className='w-16 h-16 rounded-2xl bg-gradient-to-r from-purple-700 to-blue-800 text-white flex items-center justify-center text-2xl'>
+                    <div className='w-16 h-16 rounded-2xl bg-gradient-to-r from-pink-600 to-purple-600 text-white flex items-center justify-center text-2xl mx-auto'>
                         <FaLightbulb />
                     </div>
 
@@ -35,7 +35,7 @@ const IdeaStats = () => {
                 </div>
 
                 <div className='group p-7 rounded-3xl border bg-white dark:bg-[#111827] hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl'>
-                    <div className='w-16 h-16 rounded-2xl bg-gradient-to-r from-purple-700 to-blue-800 text-white flex items-center justify-center text-2xl'>
+                    <div className='w-16 h-16 rounded-2xl bg-gradient-to-r from-pink-600 to-purple-600 text-white flex items-center justify-center text-2xl mx-auto'>
                         <Rocket />
                     </div>
 
@@ -53,7 +53,7 @@ const IdeaStats = () => {
                 </div>
 
                 <div className='group p-7 rounded-3xl border bg-white dark:bg-[#111827] hover:-translate-y-2 transition-all duration-300 hover:shadow-2xl'>
-                    <div className='w-16 h-16 rounded-2xl bg-gradient-to-r from-purple-700 to-blue-800 text-white flex items-center justify-center text-2xl'>
+                    <div className='w-16 h-16 rounded-2xl bg-gradient-to-r from-pink-600 to-purple-600 text-white flex items-center justify-center text-2xl mx-auto'>
                         <FaUsers />
                     </div>
 

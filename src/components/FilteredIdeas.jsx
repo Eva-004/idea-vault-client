@@ -40,11 +40,11 @@ const FilteredIdeas = () => {
         <div className="">
             <div className="dropdown dropdown-start">
                 <div tabIndex={0} role="button" className="btn font-bold m-1">Filter by Category ⬇️</div>
-                <ul tabIndex="-1" className="dropdown-content menu bg-base-100 rounded-box z-40 w-52 p-2 shadow-sm">
+                <ul tabIndex="-1" className="dropdown-content menu bg-base-100 dark:bg-gray-800  rounded-box z-40 w-52 p-2 shadow-sm">
                     <li  onClick={() => handleFilter('all')}
-                       className={selectedCategory === 'all' ? 'active bg-gradient-to-r from-purple-700 to-blue-800 text-white' : ''} > <a>All Category</a></li>
+                       className={selectedCategory === 'all' ? 'active bg-gradient-to-r from-pink-600 to-purple-600 text-white' : ''} > <a>All Category</a></li>
                     {
-                        ideaCategories.map(category => <li key={category.key} onClick={() => handleFilter(category.key)} className={selectedCategory === category.key ? 'active bg-gradient-to-r from-purple-700 to-blue-800 text-white' : ''}>
+                        ideaCategories.map(category => <li key={category.key} onClick={() => handleFilter(category.key)} className={selectedCategory === category.key ? 'active bg-gradient-to-r from-pink-600 to-purple-600 text-white' : ''}>
                             <a >{category.label}</a>
                         </li>)
                     }

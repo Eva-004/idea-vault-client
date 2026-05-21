@@ -75,7 +75,7 @@ const UpdateComment = ({ updateComment, idea }) => {
                                             />
                                             <FieldError />
                                         </TextField>
-                                        <Button type="submit" className='bg-gradient-to-r from-purple-800 to-blue-800 text-white mt-2 font-bold'>Update Comment</Button>
+                                        <Button type="submit" className='bg-gradient-to-r from-pink-600 to-purple-600 text-white mt-2 font-bold'>Update Comment</Button>
                                     </Form>
                                 </Surface>
                             </Modal.Body>

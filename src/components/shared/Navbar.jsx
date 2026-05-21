@@ -54,7 +54,7 @@ const Navbar = () => {
                             className="menu menu-sm dropdown-content bg-base-100 rounded-box z-10 mt-3 w-52 p-2 shadow">
                             {links}
                             {user &&
-                                <li className='text-lg block' onClick={handleLogOut}><Link className=" bg-gradient-to-r from-purple-800 to-blue-800 text-white transition-all duration-300 shadow-lg hover:scale-105" href={'/login'} >Logout</Link></li>}
+                                <li className='text-lg block' onClick={handleLogOut}><Link className=" bg-gradient-to-r from-pink-600 to-purple-600 text-white transition-all duration-300 shadow-lg hover:scale-105" href={'/login'} >Logout</Link></li>}
                             {user && userSpecificRoute}
                             
                             {!user && loginRegister}
@@ -63,7 +63,7 @@ const Navbar = () => {
                     </div>
                     <div className="flex gap-4 items-center">
                         <Image src={'/images/logo.webp'} alt="logo" width={40} height={40} className="object-cover" />
-                        <h2 className="text-3xl font-bold bg-gradient-to-r from-purple-800 to-blue-800  bg-clip-text text-transparent">IdeaVault</h2>
+                        <h2 className="text-3xl font-bold bg-gradient-to-r from-pink-600 to-purple-600  bg-clip-text text-transparent">IdeaVault</h2>
                     </div>
                 </div>
                 <div className="navbar-center hidden lg:flex">
@@ -76,10 +76,10 @@ const Navbar = () => {
                 {!user && <div className="navbar-end hidden md:flex gap-4 ">
                     <ThemeToggle value={icons.darkMode}></ThemeToggle>
                     <Link href='/login'>
-                        <button className="btn btn-outline border-purple-900 text-purple-900  dark:text-white transition-all duration-300 shadow-lg hover:scale-105">Login</button>
+                        <button className="btn btn-outline border-purple-900 text-pink-600  dark:text-white transition-all duration-300 shadow-lg hover:scale-105">Login</button>
                     </Link>
                     <Link href={'/register'}>
-                        <button className="btn bg-gradient-to-r from-purple-800 to-blue-800 text-white transition-all duration-300 shadow-lg hover:scale-105">Register</button>
+                        <button className="btn bg-gradient-to-r from-pink-600 to-purple-600 text-white transition-all duration-300 shadow-lg hover:scale-105">Register</button>
                     </Link>
                 </div>}
                 {user && <div className="navbar-end flex items-center gap-4 ">

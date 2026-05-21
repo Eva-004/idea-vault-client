@@ -174,7 +174,7 @@ const UpdatedIdea = ({ id , idea}) => {
 
 
                                         <div className="flex gap-2 pt-2">
-                                            <Button type="submit" className="w-full bg-gradient-to-r from-purple-700 to-blue-500 text-white transition-all duration-300 shadow-lg hover:scale-105">
+                                            <Button type="submit" className="w-full bg-gradient-to-r from-pink-600 to-purple-600 text-white transition-all duration-300 shadow-lg hover:scale-105">
                                                 Update
                                             </Button>
 

@@ -113,7 +113,7 @@ const RegisterPage = () => {
                         <Check />
                         Register
                     </Button>
-                    <Button type="reset" variant="secondary">
+                    <Button type="reset" className={'text-pink-600'}>
                         Reset
                     </Button>
                 </div>
