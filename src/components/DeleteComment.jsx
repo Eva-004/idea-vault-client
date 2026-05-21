@@ -1,0 +1,56 @@
+"use client";
+import { TrashBin } from "@gravity-ui/icons";
+import { AlertDialog, Button } from "@heroui/react";
+import { toast } from "react-toastify";
+
+const DeleteComment = ({deleteComment}) => {
+    const handleDelete = async()=>{
+        const res = await fetch(`${process.env.NEXT_PUBLIC_SERVER_URL}/comment/${deleteComment._id}`,{
+            method: 'DELETE',
+           
+        });
+
+   
+        if(res.ok){
+          const data = await res.json();
+          toast.warn(`Deleted your comment permanently!`)
+           console.log(data)
+        }else{
+            toast.error('Failed to delete comment!')
+        }
+    }
+    return (
+        <div>
+            <AlertDialog>
+                            <Button className='border border-red-500 text-red-500 rounded-none'><TrashBin></TrashBin>Delete</Button>
+                            <AlertDialog.Backdrop>
+                                <AlertDialog.Container>
+                                    <AlertDialog.Dialog className="sm:max-w-[400px]">
+                                        <AlertDialog.CloseTrigger className='text-purple-800' />
+                                        <AlertDialog.Header>
+                                            <AlertDialog.Icon status="danger" />
+                                            <AlertDialog.Heading>Delete  permanently?</AlertDialog.Heading>
+                                        </AlertDialog.Header>
+                                        <AlertDialog.Body>
+                                            <p className="text-gray-500">
+                                                This will permanently delete <strong>comment</strong> and all of its
+                                                data. This action cannot be undone.
+                                            </p>
+                                        </AlertDialog.Body>
+                                        <AlertDialog.Footer>
+                                            <Button slot="close" variant="tertiary">
+                                                Cancel
+                                            </Button>
+                                            <Button onClick={handleDelete} slot="close" variant="danger">
+                                                Delete
+                                            </Button>
+                                        </AlertDialog.Footer>
+                                    </AlertDialog.Dialog>
+                                </AlertDialog.Container>
+                            </AlertDialog.Backdrop>
+                        </AlertDialog>
+        </div>
+    );
+};
+
+export default DeleteComment;

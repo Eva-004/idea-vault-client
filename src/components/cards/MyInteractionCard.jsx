@@ -5,6 +5,7 @@ import Link from 'next/link';
 import React from 'react';
 import { BiEdit } from 'react-icons/bi';
 import UpdateComment from '../UpdateComment';
+import DeleteComment from '../DeleteComment';
 
 const MyInteractionCard = ({ idea, comment }) => {
     return (
@@ -22,7 +23,7 @@ const MyInteractionCard = ({ idea, comment }) => {
                     </div>
                     <div className='flex mt-4 gap-4 items-center'>
                         <UpdateComment updateComment={comment} idea={idea}></UpdateComment>
-                        <Button className='border border-red-500 text-red-500 rounded-none'><TrashBin></TrashBin>Delete</Button>
+                        <DeleteComment deleteComment={comment}></DeleteComment>
                         
                     </div>
                 </div>

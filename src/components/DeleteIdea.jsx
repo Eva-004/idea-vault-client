@@ -13,7 +13,7 @@ const DeleteIdea = ({ id , idea}) => {
    
         if(res.ok){
           const data = await res.json();
-          toast.warn(`Delete ${idea.title} permanently!`)
+          toast.warn(`Deleted ${idea.title} permanently!`)
            console.log(data)
         }else{
             toast.error('Failed to delete idea!')
