@@ -1,6 +1,7 @@
 # 💡 IdeaVault – Startup Idea Sharing Platform
 
 🚀 Live Site: https://idea-vault-client-zeta.vercel.app/ 
+
 🛠️ Server Repo: https://github.com/Eva-004/idea-vault-server-side
 
 ---
@@ -154,7 +155,7 @@ Each idea includes:
 
 ```bash
 # Clone client
-git clone https://github.com/your-username/ideavault-client
+git clone https://github.com/Eva-004/idea-vault-client
 
 # Install dependencies
 npm install
