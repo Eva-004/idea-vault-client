@@ -19,7 +19,7 @@ const MyInteractionCard = ({ idea, comment }) => {
                     <div className='space-y-2'>
                         <p className='text-lg line-clamp-2'> <span className='text-xl font-bold '>Comment:</span> {comment.comment}</p>
                         <p className='text-gray-500'>{comment.timeStamp}</p>
-                        <Button className='text-purple-800 border border-purple-800'><Link href={`http://localhost:3000/ideas/${idea?._id}`}>View Interacted Idea</Link></Button>
+                        <Button className='text-purple-800 border border-purple-800'><Link href={`/ideas/${idea?._id}`}>View Interacted Idea</Link></Button>
                     </div>
                     <div className='flex mt-4 gap-4 items-center'>
                         <UpdateComment updateComment={comment} idea={idea}></UpdateComment>

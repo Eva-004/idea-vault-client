@@ -17,7 +17,7 @@ const SearchBar = () => {
                             <SearchField.SearchIcon />
                             <SearchField.Input value={search} 
                             onChange={e=> setSearch(e.target.value)}
-                            className="w-70 " placeholder="Search your desired idea..." />
+                            className=" w-40 sm:w-70 " placeholder="Search your desired idea..." />
                             <SearchField.ClearButton />
                         </SearchField.Group>
                     </SearchField>

@@ -6,6 +6,7 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import Link from 'next/link';
 
 const Banner = () => {
     const slides = [
@@ -62,7 +63,7 @@ const Banner = () => {
 
                                 {slide.btnTitle && (
                                     <button className="px-8 py-3 bg-gradient-to-r from-pink-600 to-purple-600 text-white font-semibold rounded-lg transition-all duration-300 shadow-lg hover:scale-105">
-                                        {slide.btnTitle}
+                                        <Link href={slide.btnLink}>{slide.btnTitle}</Link>
                                     </button>
                                 )}
                             </div>

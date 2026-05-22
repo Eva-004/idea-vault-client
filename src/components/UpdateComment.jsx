@@ -9,16 +9,14 @@ const UpdateComment = ({ updateComment, idea }) => {
     const user = userData.data?.user;
     console.log(user)
 
+       
     const onSubmit = async (e) => {
         e.preventDefault();
 
         const formData = new FormData(e.currentTarget);
         const commentData = Object.fromEntries(formData.entries());
         console.log(commentData);
-        if (!commentData.comment || commentData.comment.trim() === "") {
-            toast.error("Please write a comment first!");
-            return;
-        }
+       
         commentData.userEmail = user?.email;
         commentData.userName = user?.name;
         commentData.ideaId = idea._id;
@@ -59,14 +57,12 @@ const UpdateComment = ({ updateComment, idea }) => {
                                     <BiEdit className="text-purple-800"></BiEdit>
                                 </Modal.Icon>
                                 <Modal.Heading>Update</Modal.Heading>
-                                <p className="mt-1.5 text-sm leading-5 text-gray-500 ">
-                                    Update you idea
-                                </p>
+                                
                             </Modal.Header>
                             <Modal.Body className="p-6">
                                 <Surface variant="default">
-                                    <Form onSubmit={onSubmit}>
-                                        <TextField  className='max-w-xl '>
+                                    <Form onSubmit={onSubmit} >
+                                        <TextField   className='max-w-xl '>
                                             <Label className='text-lg font-semibold flex items-center gap-1'><BiPlusCircle></BiPlusCircle> Update Your Valuable Opinion</Label>
                                             <TextArea name="comment"
                                                 className='border shadow-md  placeholder:text-gray-500'

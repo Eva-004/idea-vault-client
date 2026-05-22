@@ -20,7 +20,7 @@ const IdeasPage = async ({searchParams}) => {
                 <h2 className='text-4xl font-bold '>Explore All Ideas</h2>
                 <p className='text-gray-700'>Discover creative ideas shared by innovators.</p>
             </div>
-            <div className='flex justify-between items-center mt-4'>
+            <div className=' flex flex-col md:flex-row justify-between items-center mt-4'>
                 <SearchBar ></SearchBar>
              
                     <FilteredIdeas></FilteredIdeas>

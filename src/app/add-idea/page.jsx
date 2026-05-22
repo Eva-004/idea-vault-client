@@ -10,6 +10,8 @@ import {
     TextArea,
     TextField
 } from '@heroui/react';
+import { useRouter } from 'next/navigation';
+
 import { useState } from 'react';
 import { toast } from 'react-toastify';
 
@@ -35,6 +37,7 @@ const AddIdeaPage = () => {
         { key: "iot", label: "IoT & Smart Devices" },
         { key: "others", label: "Others" }
     ];
+    const router = useRouter();
 
     const onSubmit = async (e) => {
         e.preventDefault();
@@ -53,11 +56,12 @@ const AddIdeaPage = () => {
             },
             body: JSON.stringify(idea)
         });
+      
 
         if (res.ok) {
               toast.success("Added idea successfully!")
            setIdeaCategory("");
-           
+           router.push('/ideas')
         }
         else {
              toast.error("Failed to add idea!")

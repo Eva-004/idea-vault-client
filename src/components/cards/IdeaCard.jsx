@@ -36,7 +36,7 @@ const IdeaCard = ({idea}) => {
                     </CardDescription>
                 </CardHeader>
                 <CardFooter>
-                    <Button variant="outline" className="w-full border  text-blue-700"><Link href={`http://localhost:3000/ideas/${idea._id}`} className="flex gap-2">View Details <BsArrowUpRightSquare /></Link></Button>
+                    <Button variant="outline" className="w-full border  text-blue-700"><Link  href={`/ideas/${idea._id}`} className="flex gap-2">View Details <BsArrowUpRightSquare /></Link></Button>
                 </CardFooter>
             </Card>
         </div>
