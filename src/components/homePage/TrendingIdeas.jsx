@@ -9,7 +9,7 @@ const TrendingIdeas = async() => {
         <div className='my-10 '>
             <div className='space-y-4 max-w-lg mx-auto text-center'>
                 <h2 className='text-4xl font-bold bg-gradient-to-r from-pink-600 to-purple-600 bg-clip-text text-transparent'>Explore Trending Ideas</h2>
-                <p className='text-gray-700'>Discover the most innovative and trending ideas shared by creators and entrepreneurs worldwide.</p>
+                <p className='text-gray-700 dark:text-gray-100'>Discover the most innovative and trending ideas shared by creators and entrepreneurs worldwide.</p>
             </div>
             <div className='mt-10 max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-6'>
               {

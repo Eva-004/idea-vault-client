@@ -22,11 +22,11 @@ const UserFeedback = () => {
                         </div>
                     </div>
 
-                    <p className='text-gray-600'>
+                    <p className='text-gray-600 dark:text-gray-300'>
                         “This idea is strong, but you should validate user demand before building MVP.”
                     </p>
 
-                    <div className='flex items-center justify-between text-sm text-gray-500'>
+                    <div className='flex items-center justify-between text-sm text-gray-400'>
                         <div className='flex items-center gap-1'>
                             <FaThumbsUp size={16} /> Helpful
                         </div>
@@ -41,15 +41,15 @@ const UserFeedback = () => {
                         <FaUserCircle size={32} />
                         <div>
                             <h4 className='font-semibold'>Rahim Ahmed</h4>
-                            <p className='text-xs text-gray-500'>Startup Advice</p>
+                            <p className='text-xs text-gray-400 '>Startup Advice</p>
                         </div>
                     </div>
 
-                    <p className='text-gray-600'>
+                    <p className='text-gray-600 dark:text-gray-300'>
                         “Focus more on problem clarity. Investors care more about problem than solution.”
                     </p>
 
-                    <div className='flex items-center justify-between text-sm text-gray-500'>
+                    <div className='flex items-center justify-between text-sm text-gray-400'>
                         <div className='flex items-center gap-1'>
                             <FaThumbsUp size={16} /> Helpful
                         </div>
@@ -68,11 +68,11 @@ const UserFeedback = () => {
                         </div>
                     </div>
 
-                    <p className='text-gray-600'>
+                    <p className='text-gray-600 dark:text-gray-300'>
                         “Try adding early user interviews. It will increase your success rate significantly.”
                     </p>
 
-                    <div className='flex items-center justify-between text-sm text-gray-500'>
+                    <div className='flex items-center justify-between text-sm text-gray-400'>
                         <div className='flex items-center gap-1'>
                             <FaThumbsUp size={16} /> Helpful
                         </div>

@@ -29,7 +29,7 @@ const IdeaStats = () => {
                         Creative Ideas Shared
                     </h4>
 
-                    <p className='text-gray-500 mt-3 leading-relaxed'>
+                    <p className='text-gray-500 dark:text-gray-300 mt-3 leading-relaxed'>
                         Innovative startup concepts shared by creators worldwide.
                     </p>
                 </div>
@@ -47,7 +47,7 @@ const IdeaStats = () => {
                         Startup Launches
                     </h4>
 
-                    <p className='text-gray-500 mt-3 leading-relaxed'>
+                    <p className='text-gray-500 dark:text-gray-300 mt-3 leading-relaxed'>
                         Ideas transformed into real startup journeys.
                     </p>
                 </div>
@@ -65,7 +65,7 @@ const IdeaStats = () => {
                         Active Collaborators
                     </h4>
 
-                    <p className='text-gray-500 mt-3 leading-relaxed'>
+                    <p className='text-gray-500 dark:text-gray-300 mt-3 leading-relaxed'>
                         Entrepreneurs and developers discussing ideas daily.
                     </p>
                 </div>
