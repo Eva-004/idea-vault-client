@@ -52,7 +52,7 @@ const Navbar = () => {
                         </div>
                         <ul
                             tabIndex="-1"
-                            className="menu menu-sm bg-white dark:bg-gray-900 dropdown-content  rounded-box z-10 mt-3 w-52 p-2 shadow">
+                            className="menu menu-sm bg-white dark:bg-gray-900 dropdown-content  rounded-box z-40 mt-3 w-52 p-2 shadow">
                             {links}
                             
                             {user && userSpecificRoute}
