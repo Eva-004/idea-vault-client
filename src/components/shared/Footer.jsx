@@ -18,8 +18,8 @@ const Footer = () => {
                 <div className='space-y-2 '>
                     <p className='font-bold text-2xl'>Quick Links</p>
                      <ul className='text-[#101727]  '>
-                     <li className='text-white text-lg'><Link href={'/ideas'}>Ideas</Link></li>
-                     <li className='text-white text-lg'><Link href={'/ideas'}>Ideas</Link></li>
+                     <li className='text-white text-lg'><Link href={'/'}>Home</Link></li>
+                     <li className='text-white text-lg'><Link href={'/add-idea'}>Add Idea</Link></li>
                      <li className='text-white text-lg'><Link href={'/ideas'}>Ideas</Link></li>
                      
                      </ul>

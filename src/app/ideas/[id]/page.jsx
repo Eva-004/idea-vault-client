@@ -33,34 +33,34 @@ const IdeaDetailsPage = async ({ params }) => {
           </div>
           <div className='lg:w-1/2 '>
             <h2 className='font-bold text-2xl md:text-4xl  bg-gradient-to-r from-purple-800 to-blue-800  bg-clip-text text-transparent'>{idea.title}</h2>
-            <p className='mt-2 text-gray-500'>{idea.detailDescription}</p>
-            <div className='flex gap-3 items-center mt-4 flex-wrap'>
+            <p className='mt-2 text-gray-500 dark:text-gray-100'>{idea.detailDescription}</p>
+            <div className='flex gap-3 items-center mt-4 dark:text-gray-900 flex-wrap'>
               {
                 idea.tags.map((tag, ind) => <div key={ind} className="badge badge-soft p-2 badge-outline">{tag}</div>)
               }
             </div>
             <div className='mt-4 space-y-2'>
-              <p className='text-lg flex items-center gap-1'> <span className='font-semibold'>Targeted Audience:</span> {idea.targetAudience}</p>
-              <p className='text-lg flex items-center gap-1'> <span className='font-semibold'>Estimated Budget:</span > {idea.estimatedBudget}</p>
+              <p className='  sm:text-lg flex items-center gap-1'> <span className='font-semibold'>Targeted Audience:</span> {idea.targetAudience}</p>
+              <p className=' sm:text-lg flex items-center gap-1'> <span className='font-semibold'>Estimated Budget:</span > {idea.estimatedBudget}</p>
             </div>
             <div className='mt-4 grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch'>
 
               <Card className='shadow-lg border border-blue-100 p-5 flex flex-col h-full rounded-2xl'>
-                <h2 className='font-semibold text-xl text-blue-800 mb-3 text-center'>
+                <h2 className='font-semibold text-xl text-blue-900 mb-3 text-center'>
                   Problem Statement
                 </h2>
 
-                <p className='text-gray-600 leading-7 flex-row md:line-clamp-3'>
+                <p className='text-gray-600 dark:text-gray-100 leading-7 flex-row md:line-clamp-3 text-center md:text-left'>
                   {idea.problemStatement}
                 </p>
               </Card>
 
               <Card className='shadow-lg border border-purple-100 p-5 flex flex-col h-full rounded-2xl'>
-                <h2 className='font-semibold text-xl text-purple-800 mb-3 text-center'>
+                <h2 className='font-semibold text-xl text-purple-900 mb-3 text-center'>
                   Proposed Solution
                 </h2>
 
-                <p className='text-gray-600 leading-7 flex-row md:line-clamp-3'>
+                <p className='text-gray-600 dark:text-gray-100 leading-7 flex-row md:line-clamp-3 text-center md:text-left'>
                   {idea.proposedSolution}
                 </p>
               </Card>

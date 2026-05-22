@@ -47,7 +47,7 @@ const UpdateComment = ({ updateComment, idea }) => {
         <div>
             <Modal>
 
-                <Button className='border border-blue-700 text-blue-700 rounded-none'><BiEdit></BiEdit> Edit</Button>
+                <Button className='border border-blue-700 text-blue-700 rounded-none' ><BiEdit></BiEdit> Edit</Button>
                 <Modal.Backdrop>
                     <Modal.Container placement="auto">
                         <Modal.Dialog className="sm:max-w-md">
