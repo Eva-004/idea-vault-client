@@ -40,8 +40,8 @@ const IdeaDetailsPage = async ({ params }) => {
               }
             </div>
             <div className='mt-4 space-y-2'>
-              <p className='  sm:text-lg flex items-center gap-1'> <span className='font-semibold'>Targeted Audience:</span> {idea.targetAudience}</p>
-              <p className=' sm:text-lg flex items-center gap-1'> <span className='font-semibold'>Estimated Budget:</span > {idea.estimatedBudget}</p>
+              <p className=' text-sm  sm:text-lg flex items-center gap-1'> <span className='font-semibold'>Targeted Audience:</span> {idea.targetAudience}</p>
+              <p className=' text-sm sm:text-lg flex items-center gap-1'> <span className='font-semibold'>Estimated Budget:</span > {idea.estimatedBudget}</p>
             </div>
             <div className='mt-4 grid grid-cols-1 md:grid-cols-2 gap-5 items-stretch'>
 

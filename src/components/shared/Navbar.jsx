@@ -54,10 +54,10 @@ const Navbar = () => {
                             tabIndex="-1"
                             className="menu menu-sm bg-white dark:bg-gray-900 dropdown-content  rounded-box z-10 mt-3 w-52 p-2 shadow">
                             {links}
+                            
+                            {user && userSpecificRoute}
                             {user &&
                                 <li className='text-lg block ' ><button onClick={handleLogOut} className="w-full  bg-gradient-to-r from-pink-600 to-purple-600 text-white transition-all duration-300 shadow-lg hover:scale-105" >Logout</button></li>}
-                            {user && userSpecificRoute}
-                            
                             {!user && loginRegister}
                              <li><ThemeToggle value={icons.darkMode}></ThemeToggle></li>
                            
