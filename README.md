@@ -146,10 +146,19 @@ Each idea includes:
 ## 🚀 Deployment
 
 - Frontend: Vercel
-- Backend: Render / Railway
+- Backend: Vercel
 - MongoDB Atlas for database
 
 ---
+
+## UI Screenshorts
+
+# Home Page
+<img width="945" height="377" alt="Screenshot 2026-06-05 071831" src="https://github.com/user-attachments/assets/7834ee17-7d4c-4cb3-8bb3-bbc7a56d298a" />
+
+# Ideas page
+<img width="947" height="413" alt="Screenshot 2026-06-05 071921" src="https://github.com/user-attachments/assets/8f85f89b-8abc-48c1-ae10-8567d1c95a2d" />
+
 
 ## 📌 Installation Guide
 
@@ -162,3 +171,9 @@ npm install
 
 # Run project
 npm run dev
+
+---
+
+
+
+
