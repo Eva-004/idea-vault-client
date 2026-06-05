@@ -159,6 +159,9 @@ Each idea includes:
 # Ideas page
 <img width="947" height="413" alt="Screenshot 2026-06-05 071921" src="https://github.com/user-attachments/assets/8f85f89b-8abc-48c1-ae10-8567d1c95a2d" />
 
+## Add Ideas  
+<img width="947" height="413" alt="Screenshot 2026-06-05 072527" src="https://github.com/user-attachments/assets/81cc9049-2d85-4bc2-bb64-f40d2b51bc95" />
+
 
 ## 📌 Installation Guide
 
